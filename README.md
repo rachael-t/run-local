@@ -3,5 +3,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Run Local
 
 ### Planning
-Gist for planning out the project.
-<script src="https://gist.github.com/rachael-t/686a4291f85fb5fb713bff03abd3a407.js"></script>
+Please see this [Gist](https://gist.github.com/rachael-t/686a4291f85fb5fb713bff03abd3a407) for the initial brainstorm and planning of this project.
