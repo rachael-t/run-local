@@ -26,7 +26,7 @@ class Landing extends Component {
       <div className="landing-container">
         <form className='landing-form'>
           <h2>Welcome!</h2>
-          <p>Please select a city you would like to run in:</p>
+          <p className="welcome-message">Please select a city you would like to run in:</p>
           <select
             className="city-selection"
             placeholder="select a city"
