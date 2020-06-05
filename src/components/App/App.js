@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-// import { Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Landing from '../Landing/Landing'
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class App extends Component {
           <h1>Run Local</h1>
         </header>
         <main>
-          
+          <Route exact path="/" render={() => <Landing />}/>
         </main>
       </div>
     );
