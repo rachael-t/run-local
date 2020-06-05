@@ -3,10 +3,10 @@
     justify-content: center;
     align-items: center;
     background-image: url('https://images.unsplash.com/photo-1462321408205-823b3e60aa2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-    background-size: 150%;
+    background-size: 115%;
     background-repeat: no-repeat;
     width: 100%;
-    height: 200vh;
+    height: 100%;
 }
 
 .landing-form {
@@ -16,9 +16,9 @@
     flex-direction: column;
     background-color: #F4F5F8;
     border-radius: 1px;
-    height: 30em;
-    padding: 50px 100px;
-    width: 25em;
+    height: 22em;
+    padding: 25px 50px;
+    width: 17em;
 }
 
 h2, .welcome-message {
@@ -33,7 +33,7 @@ select, .enter-page-button {
   margin-bottom: 30px;
   padding: 2px 0 5px;
   text-align: center;
-  width: 250px;
+  width: 200px;
 }
 
 .enter-page-button {
