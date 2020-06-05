@@ -24,7 +24,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
-        <form>
+        <form className='landing-form'>
           <h2>Welcome!</h2>
           <p>Please select a city you would like to run in:</p>
           <select
