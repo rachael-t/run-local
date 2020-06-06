@@ -47,12 +47,12 @@ class Sidebar extends Component {
             <option value="Superior">Superior</option>
             <option value="Westminster">Westminster</option>
           </select>
-          <button className="enter-page-button" onClick={this.handleSubmit}>
+          <button className="new-trails-button" onClick={this.handleSubmit}>
             Find New Trails
           </button>
           <p className="error-message">{this.state.errorMessage}</p>
         </form>
-        <button>My Saved Trails</button>
+        <button className="saved-trails-button">My Saved Trails</button>
         <div>
             <h4>Support your local running stores:</h4>
             <ul>

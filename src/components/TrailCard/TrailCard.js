@@ -13,7 +13,7 @@ const TrailCard = (props) => {
         alt=""
       />
       <Link to={`/`} className="trail-card-link">
-        <button className="view-listings">View Trail Details</button>
+        <button className="view-trail-details">View Trail Details</button>
       </Link>
     </div>
   );
