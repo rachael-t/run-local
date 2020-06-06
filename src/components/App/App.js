@@ -30,7 +30,7 @@ class App extends Component {
             path="/:selectedCity"
             render={({ match }) => {
               return (
-                <div>
+                <div className='city-page'>
                   <Sidebar setSelectedCity={this.setSelectedCity} />
                   <LocationContainer
                     match={match.params.selectedCity}
