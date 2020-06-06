@@ -1,0 +1,36 @@
+.trail-card {
+    align-items: center;
+    background-color: #6D7F9C;
+    border: 2px solid #35475D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 375px;
+    justify-content: space-between;
+    margin: 3%;
+    padding: 1%;
+    width: 300px;
+  }
+  
+  .view-trail-details {
+    background-color: #535B2D;
+    border-radius: 5px;
+    color: #F4F5F8;
+    font-size: medium;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 2px 0 5px;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .trail-card h2 {
+    margin-bottom: 8px;
+    color: #F4F5F8;
+  }
+
+  .trail-card-image {
+      width: 200px;
+      height: 150px;
+  }
+  
