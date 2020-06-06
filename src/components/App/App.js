@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
 import Landing from "../Landing/Landing";
+import Sidebar from "../Sidebar/Sidebar";
 import { fetchWeather, fetchTrails } from "../../apiCalls.js";
 
 class App extends Component {
@@ -64,6 +65,14 @@ class App extends Component {
           <h1>Run Local</h1>
         </header>
         <main>
+          <Route
+            exact
+            path='/:selectedCity'
+            render={({ match }) => (<Sidebar 
+              match={match.params.selectedCity}
+              setSelectedCity={this.setSelectedCity}
+            />)}
+          />
           <Route
             exact
             path="/"
