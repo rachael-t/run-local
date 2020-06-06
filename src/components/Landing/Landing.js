@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Landing.css";
+import { withRouter } from "react-router-dom";
 
 class Landing extends Component {
   constructor(props) {
@@ -16,9 +17,12 @@ class Landing extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.state.city === ""
-      ? this.setState({ errorMessage: "You must select a city" })
-      : this.props.setSelectedCity(this.state.city);
+    if (this.state.city === "") {
+        this.setState({ errorMessage: "You must select a city" })
+    } else {
+        this.props.setSelectedCity(this.state.city)
+        this.props.history.push(`/${this.state.city}`)
+    }
   };
 
   render() {
@@ -50,4 +54,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default withRouter(Landing);

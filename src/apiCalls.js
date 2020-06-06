@@ -2,7 +2,7 @@ export const fetchWeather = (lat, lon) => {
   console.log("lat", lat);
   console.log("lon", lon);
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6d1ace92366d9a453c37cee4b46329fe`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6d1ace92366d9a453c37cee4b46329fe&units=imperial`
   ).then((response) => response.json());
 };
 

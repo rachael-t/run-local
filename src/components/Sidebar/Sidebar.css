@@ -1,0 +1,40 @@
+.sidebar-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #F4F5F8;
+    border-right: 2px solid #35475D;
+    border-bottom: 2px solid #35475D;
+    height: 120vh;
+    width: 20%;
+  }
+  
+  h4,
+  p, li {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  li {
+      list-style-type: none;
+  }
+
+  .sidebar-message {
+      margin-top: 10px;
+      font-weight: bold;
+  }
+  
+ .new-trails-button, .saved-trails-button {
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 30px;
+    padding: 2px 0 5px;
+    text-align: center;
+    width: 200px;
+    background-color: #35475D;
+    border: 2px solid #6D7F9C;
+    color: #F4F5F8;
+  }
+  
