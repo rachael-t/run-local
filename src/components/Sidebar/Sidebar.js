@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./Sidebar.css";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
   constructor(props) {
     super();
     this.state = {
-        city: '',
-        errorMessage: '',
+      city: "",
+      errorMessage: "",
     };
   }
 
@@ -18,10 +19,10 @@ class Sidebar extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.city === "") {
-        this.setState({ errorMessage: "You must select a city" })
+      this.setState({ errorMessage: "You must select a city" });
     } else {
-        this.props.setSelectedCity(this.state.city)
-        this.props.history.push(`/${this.state.city}`)
+      this.props.setSelectedCity(this.state.city);
+      this.props.history.push(`/trails/${this.state.city}`);
     }
   };
 
@@ -29,9 +30,7 @@ class Sidebar extends Component {
     return (
       <div className="sidebar-container">
         <form className="sidebar-form">
-          <p className="sidebar-message">
-            Select a different city:
-          </p>
+          <p className="sidebar-message">Select a different city:</p>
           <select
             className="city-selection"
             placeholder="select a city"
@@ -52,15 +51,17 @@ class Sidebar extends Component {
           </button>
           <p className="error-message">{this.state.errorMessage}</p>
         </form>
-        <button className="saved-trails-button">My Saved Trails</button>
+        <Link to="/SavedTrails" className="saved-trails-link">
+          <button className="saved-trails-button">My Saved Trails</button>
+        </Link>
         <div>
-            <h4>Support your local running stores:</h4>
-            <ul>
-                <li>Runners Roost</li>
-                <li>Berkeley Park Running Company</li>
-                <li>Shoes & Brews</li>
-                <li>PLAYTRI</li>
-            </ul>
+          <h4>Support your local running stores:</h4>
+          <ul>
+            <li>Runners Roost</li>
+            <li>Berkeley Park Running Company</li>
+            <li>Shoes & Brews</li>
+            <li>PLAYTRI</li>
+          </ul>
         </div>
       </div>
     );

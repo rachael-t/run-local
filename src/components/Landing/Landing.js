@@ -21,7 +21,7 @@ class Landing extends Component {
         this.setState({ errorMessage: "You must select a city" })
     } else {
         this.props.setSelectedCity(this.state.city)
-        this.props.history.push(`/${this.state.city}`)
+        this.props.history.push(`/trails/${this.state.city}`)
     }
   };
 

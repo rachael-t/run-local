@@ -1,0 +1,18 @@
+.saved-trails-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    width: 80%;
+  }
+  
+  .saved-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .saved-trails-container h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }

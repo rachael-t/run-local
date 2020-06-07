@@ -1,0 +1,54 @@
+.trail-container {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+}
+
+.trail-container h2,
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.save-button {
+    background-color: #535B2D;
+    border-radius: 5px;
+    color: #F4F5F8;
+    font-size: medium;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 2px 0 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.trail-details-container {
+    display: flex;
+    flex-flow: wrap;
+    padding: 10%;
+  }
+
+.trail-detail-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.trail-detail-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.trail-detail-image{
+    height: 300px;
+    width: 350px;
+}
+
+
+.return-link-container {
+    display: flex;
+    justify-content: center;
+} 
