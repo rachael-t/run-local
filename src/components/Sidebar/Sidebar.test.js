@@ -13,14 +13,12 @@ describe("Sidebar", () => {
       </MemoryRouter>
     );
 
-    const sidebarMessage = getByText(
-      "Select a different city:"
-    );
-    const citySelectDropdown = getByPlaceholderText('select a city');
+    const sidebarMessage = getByText("Select a different city:");
+    const citySelectDropdown = getByPlaceholderText("select a city");
     const newTrailsButton = getByRole("button", { name: "Find New Trails" });
-    const savedTrailsButton = getByRole("button", {name: "My Saved Trails"})
-    const storesMessage = getByText("Support your local running stores:")
-    const localStores = getAllByRole('listitem')
+    const savedTrailsButton = getByRole("button", { name: "My Saved Trails" });
+    const storesMessage = getByText("Support your local running stores:");
+    const localStores = getAllByRole("listitem");
 
     expect(sidebarMessage).toBeInTheDocument();
     expect(citySelectDropdown).toBeInTheDocument();
