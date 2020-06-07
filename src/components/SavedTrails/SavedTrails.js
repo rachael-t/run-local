@@ -1,6 +1,6 @@
 import React from "react";
 import "./SavedTrails.css";
-import TrailCard from "../TrailCard/TrailCard"
+import TrailCard from "../TrailCard/TrailCard";
 
 const SavedTrails = (props) => {
   const savedTrailsToDisplay = props.savedTrails.map((trail) => {
@@ -13,11 +13,12 @@ const SavedTrails = (props) => {
       />
     );
   });
-  
+
   return (
     <div className="saved-trails-container">
       <h2>Saved Trails</h2>
-      {savedTrailsToDisplay}
+      <div className="saved-cards-container">{savedTrailsToDisplay}
+      </div>
     </div>
   );
 };
