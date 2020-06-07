@@ -47,9 +47,8 @@ const TrailDetails = (props) => {
           />
         </div>
       </div>
-
       <div className="return-link-container">
-        <Link className="return-link" to={`/${props.selectedTrail.city}`}>
+        <Link className="return-link" to={`/trails/${props.selectedTrail.city}`}>
           <p className="return-message">
             Go back to view other trails in {props.selectedTrail.city}
           </p>
