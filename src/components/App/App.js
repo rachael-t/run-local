@@ -75,6 +75,7 @@ class App extends Component {
                   <TrailDetails
                     selectedTrail={this.state.selectedTrail}
                     setSavedTrails={this.setSavedTrails}
+                    savedTrails={this.state.savedTrails}
                   />
                 </div>
               );
