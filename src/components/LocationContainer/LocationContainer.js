@@ -99,7 +99,7 @@ class LocationContainer extends Component {
     } else if (city === "Superior") {
       lat = 39.9528;
       lon = -105.1686;
-    } else if (city === "Wesminster") {
+    } else if (city === "Westminster") {
       lat = 39.8397;
       lon = -105.0372;
     }
