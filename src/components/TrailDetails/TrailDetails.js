@@ -3,6 +3,7 @@ import "./TrailDetails.css";
 import { Link } from "react-router-dom";
 
 const TrailDetails = (props) => {
+
   const checkConditions = () => {
     if (
       props.selectedTrail.trailInfo.conditionStatus &&
@@ -11,6 +12,17 @@ const TrailDetails = (props) => {
       return `Conditions: ${props.selectedTrail.trailInfo.conditionStatus} / ${props.selectedTrail.trailInfo.conditionDetails}`;
     } else {
       return "Conditions: no report found";
+    }
+  };
+
+  const checkSavedTrails = () => {
+    let isSaved = props.savedTrails.find((trail) => {
+      return trail.id === props.selectedTrail.trailInfo.id;
+    });
+    if (props.savedTrails.length > 0 && isSaved) {
+      return "Remove from Favorites";
+    } else {
+      return "Save to Favorites";
     }
   };
 
@@ -28,11 +40,13 @@ const TrailDetails = (props) => {
             </li>
             <li>{checkConditions()}</li>
             <button
-            className="save-button"
-            onClick={() => props.setSavedTrails(props.selectedTrail.trailInfo)}
-          >
-            Save to Favorites
-          </button>
+              className="save-button"
+              onClick={() =>
+                props.setSavedTrails(props.selectedTrail.trailInfo)
+              }
+            >
+              {checkSavedTrails()}
+            </button>
           </ul>
         </div>
         <div className="trail-detail-image-container">
@@ -48,7 +62,10 @@ const TrailDetails = (props) => {
         </div>
       </div>
       <div className="return-link-container">
-        <Link className="return-link" to={`/trails/${props.selectedTrail.city}`}>
+        <Link
+          className="return-link"
+          to={`/trails/${props.selectedTrail.city}`}
+        >
           <p className="return-message">
             Go back to view other trails in {props.selectedTrail.city}
           </p>
