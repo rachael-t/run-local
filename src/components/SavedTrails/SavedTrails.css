@@ -9,10 +9,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 90vh;
+    overflow: scroll;
   }
   
   .saved-trails-container h2 {
     display: flex;
     justify-content: center;
     margin-top: 5%;
+  }
+
+  .saved-trails-title {
+    font-family: 'Rock Salt', cursive;
   }
