@@ -9,7 +9,7 @@ const TrailCard = (props) => {
       <img
         className="trail-card-image"
         src={props.trailInfo.imgSmallMed ? props.trailInfo.imgSmallMed : "/images/no-image-found.jpg"}
-        alt=""
+        alt="view of trail"
       />
       <Link to={`/trails/${props.city}/${props.trailInfo.name}`} className="trail-card-link">
         <button className="view-trail-details" onClick={() => props.setSelectedTrail(props)}>View Trail Details</button>
