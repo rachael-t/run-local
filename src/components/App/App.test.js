@@ -107,7 +107,9 @@ describe("App", () => {
     expect(citySelection).toBeInTheDocument();
     expect(enterButton).toBeInTheDocument();
   });
+});
 
+describe("User flow of adding and removing a trail from favorites", () => {
   it("should load the selected city`s weather and trails when Find Trails has been clicked", async () => {
     fetchWeather.mockResolvedValueOnce(cityWeather);
     fetchTrails.mockResolvedValueOnce(cityTrails);
@@ -124,6 +126,7 @@ describe("App", () => {
       target: { value: "Arvada" },
     });
     fireEvent.click(enterButton);
+
     //Sidebar, LocationContainer and TrailCard components rendered
     const sidebarMessage = getByText("Select a different city:");
     const cityName = await waitFor(() => getAllByText("Arvada"));
@@ -162,6 +165,7 @@ describe("App", () => {
       target: { value: "Arvada" },
     });
     fireEvent.click(enterButton);
+
     //LocationContainer and TrailCard components rendered
     const cityName = await waitFor(() => getAllByText("Arvada"));
     const weatherMessage = await waitFor(() =>
@@ -172,6 +176,7 @@ describe("App", () => {
       name: "View Trail Details",
     });
     fireEvent.click(trailDetailsButton[1]);
+
     //Sidebar and TrailDetails component rendered
     const sidebarMessage = getByText("Select a different city:");
     const trailSummary = getByText(
@@ -212,6 +217,7 @@ describe("App", () => {
       target: { value: "Arvada" },
     });
     fireEvent.click(enterButton);
+
     //LocationContainer and TrailCard components rendered
     const cityName = await waitFor(() => getAllByText("Arvada"));
     const weatherMessage = await waitFor(() =>
@@ -222,6 +228,7 @@ describe("App", () => {
       name: "View Trail Details",
     });
     fireEvent.click(trailDetailsButton[1]);
+
     //Sidebar and TrailDetails component rendered
     const sidebarMessage = getByText("Select a different city:");
     const saveButton = getByRole("button", {
@@ -258,6 +265,7 @@ describe("App", () => {
       target: { value: "Arvada" },
     });
     fireEvent.click(enterButton);
+
     //Sidebar, LocationContainer and TrailCard components rendered
     const cityName = await waitFor(() => getAllByText("Arvada"));
     const weatherMessage = await waitFor(() =>
@@ -268,6 +276,7 @@ describe("App", () => {
       name: "View Trail Details",
     });
     fireEvent.click(trailDetailsButton[1]);
+
     //Sidebar and TrailDetails component rendered
     const saveButton = getByRole("button", {
       name: "Save to Favorites",
@@ -275,6 +284,7 @@ describe("App", () => {
     fireEvent.click(saveButton);
     const savedTrailsButton = getByRole("button", { name: "My Saved Trails" });
     fireEvent.click(savedTrailsButton);
+
     //Sidebar and SavedTrails component rendered
     const sidebarMessage = getByText("Select a different city:");
     const savedTrailName = getByText("Bear Peak Out and Back");
@@ -309,6 +319,7 @@ describe("App", () => {
       target: { value: "Arvada" },
     });
     fireEvent.click(enterButton);
+
     //Sidebar, LocationContainer and TrailCard components rendered
     const cityName = await waitFor(() => getAllByText("Arvada"));
     const weatherMessage = await waitFor(() =>
@@ -319,6 +330,7 @@ describe("App", () => {
       name: "View Trail Details",
     });
     fireEvent.click(trailDetailsButton[1]);
+
     //Sidebar and TrailDetails component rendered
     const saveButton = getByRole("button", {
       name: "Save to Favorites",
@@ -326,12 +338,14 @@ describe("App", () => {
     fireEvent.click(saveButton);
     const savedTrailsButton = getByRole("button", { name: "My Saved Trails" });
     fireEvent.click(savedTrailsButton);
+
     //Sidebar and SavedTrails component rendered
     const savedTrailName = getByText("Bear Peak Out and Back");
     const savedTrailDetailsButton1 = getByRole("button", {
       name: "View Trail Details",
     });
     fireEvent.click(savedTrailDetailsButton1);
+
     //Sidebar and TrailDetails component rendered
     const removeButton = getByRole("button", {
       name: "Remove from Favorites",
@@ -339,6 +353,7 @@ describe("App", () => {
     fireEvent.click(removeButton);
     const savedTrailsButton2 = getByRole("button", { name: "My Saved Trails" });
     fireEvent.click(savedTrailsButton2);
+
     //Sidebar and SavedTrails component rendered
     const sidebarMessage = getByText("Select a different city:");
     const noTrailsSavedMessage = getByText(
@@ -349,3 +364,8 @@ describe("App", () => {
     expect(noTrailsSavedMessage).toBeInTheDocument();
   });
 });
+
+describe("User flow of switching the selected city", () => {
+  
+
+})
