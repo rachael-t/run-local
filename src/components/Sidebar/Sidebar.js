@@ -29,7 +29,18 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar-container">
+        <img
+          src="https://img.icons8.com/ios/50/000000/like.png"
+          alt="heart icon"
+        />
+        <Link to="/SavedTrails" className="saved-trails-link">
+          <button className="saved-trails-button">My Saved Trails</button>
+        </Link>
         <form className="sidebar-form">
+          <img
+            src="https://img.icons8.com/ios/50/000000/trail--v2.png"
+            alt="trail icon"
+          />
           <p className="sidebar-message">Select a different city:</p>
           <select
             className="city-selection"
@@ -51,9 +62,10 @@ class Sidebar extends Component {
           </button>
           <p className="error-message">{this.state.errorMessage}</p>
         </form>
-        <Link to="/SavedTrails" className="saved-trails-link">
-          <button className="saved-trails-button">My Saved Trails</button>
-        </Link>
+        <img
+          src="https://img.icons8.com/dotty/80/000000/shop-local.png"
+          alt="shopping bag with heart icon"
+        />
         <div>
           <h4>Support your local running stores:</h4>
           <ul>
