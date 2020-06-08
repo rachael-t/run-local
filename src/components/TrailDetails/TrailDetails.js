@@ -28,7 +28,7 @@ const TrailDetails = (props) => {
 
   return (
     <div className="trail-container">
-      <h2>{props.selectedTrail.trailInfo.name}</h2>
+      <h2 className="trail-name">{props.selectedTrail.trailInfo.name}</h2>
       <p>{props.selectedTrail.trailInfo.summary}</p>
       <div className="trail-details-container">
         <div className="trail-detail-info-container">
