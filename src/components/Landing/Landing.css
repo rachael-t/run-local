@@ -19,6 +19,7 @@
     height: 22em;
     padding: 25px 50px;
     width: 17em;
+    border-radius: 5px;
 }
 
 h2, .welcome-message {

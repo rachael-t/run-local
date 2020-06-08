@@ -10,6 +10,11 @@ p {
   justify-content: center;
 }
 
+.trail-name {
+  margin-top: 2%;
+  font-family: 'Rock Salt', cursive;
+}
+
 .save-button {
     background-color: #535B2D;
     border-radius: 5px;
@@ -52,3 +57,11 @@ p {
     display: flex;
     justify-content: center;
 } 
+
+.return-message {
+  background-color: #F4F5F8;
+    border-radius: 5px;
+    opacity: 0.8;
+    padding: 1%;
+    width: 100%;
+}

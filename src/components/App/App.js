@@ -1,11 +1,12 @@
-import React, { Component } from "react";
 import "./App.css";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Landing from "../Landing/Landing";
+import LocationContainer from "../LocationContainer/LocationContainer";
+import React, { Component } from "react";
+import SavedTrails from "../SavedTrails/SavedTrails";
 import Sidebar from "../Sidebar/Sidebar";
 import TrailDetails from "../TrailDetails/TrailDetails";
-import SavedTrails from "../SavedTrails/SavedTrails";
-import LocationContainer from "../LocationContainer/LocationContainer";
+import BadPath from "../BadPath/BadPath";
 
 class App extends Component {
   constructor() {
@@ -44,59 +45,62 @@ class App extends Component {
           <h1>Run Local</h1>
         </header>
         <main>
-          <Route
-            exact
-            path="/"
-            render={() => <Landing setSelectedCity={this.setSelectedCity} />}
-          />
-          <Route
-            exact
-            path="/trails/:selectedCity"
-            render={({ match }) => {
-              return (
-                <div className="city-page">
-                  <Sidebar setSelectedCity={this.setSelectedCity} />
-                  <LocationContainer
-                    match={match.params.selectedCity}
-                    selectedCity={this.state.selectedCity}
-                    setSelectedTrail={this.setSelectedTrail}
-                  />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/trails/:selectedCity/:selectedTrail"
-            render={({ match }) => {
-              return (
-                <div className="city-page">
-                  <Sidebar setSelectedCity={this.setSelectedCity} />
-                  <TrailDetails
-                    selectedTrail={this.state.selectedTrail}
-                    setSavedTrails={this.setSavedTrails}
-                    savedTrails={this.state.savedTrails}
-                  />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/SavedTrails"
-            render={() => {
-              return (
-                <div className="saved-page">
-                  <Sidebar setSelectedCity={this.setSelectedCity} />
-                  <SavedTrails
-                    savedTrails={this.state.savedTrails}
-                    selectedCity={this.state.selectedCity}
-                    setSelectedTrail={this.setSelectedTrail}
-                  />
-                </div>
-              );
-            }}
-          />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Landing setSelectedCity={this.setSelectedCity} />}
+            />
+            <Route
+              exact
+              path="/trails/:selectedCity"
+              render={({ match }) => {
+                return (
+                  <div className="city-page">
+                    <Sidebar setSelectedCity={this.setSelectedCity} />
+                    <LocationContainer
+                      match={match.params.selectedCity}
+                      selectedCity={this.state.selectedCity}
+                      setSelectedTrail={this.setSelectedTrail}
+                    />
+                  </div>
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/trails/:selectedCity/:selectedTrail"
+              render={({ match }) => {
+                return (
+                  <div className="city-page">
+                    <Sidebar setSelectedCity={this.setSelectedCity} />
+                    <TrailDetails
+                      selectedTrail={this.state.selectedTrail}
+                      setSavedTrails={this.setSavedTrails}
+                      savedTrails={this.state.savedTrails}
+                    />
+                  </div>
+                );
+              }}
+            />
+            <Route
+              exact
+              path="/SavedTrails"
+              render={() => {
+                return (
+                  <div className="saved-page">
+                    <Sidebar setSelectedCity={this.setSelectedCity} />
+                    <SavedTrails
+                      savedTrails={this.state.savedTrails}
+                      selectedCity={this.state.selectedCity}
+                      setSelectedTrail={this.setSelectedTrail}
+                    />
+                  </div>
+                );
+              }}
+            />
+            <Route path="" render={() => <BadPath />} />
+          </Switch>
         </main>
       </div>
     );

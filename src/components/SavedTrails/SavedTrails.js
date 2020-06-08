@@ -1,5 +1,6 @@
-import React from "react";
 import "./SavedTrails.css";
+import PropTypes from "prop-types";
+import React from "react";
 import TrailCard from "../TrailCard/TrailCard";
 
 const SavedTrails = (props) => {
@@ -22,10 +23,16 @@ const SavedTrails = (props) => {
 
   return (
     <div className="saved-trails-container">
-      <h2>Saved Trails</h2>
+      <h2 className="saved-trails-title">Saved Trails</h2>
       <div className="saved-cards-container">{savedTrailsToDisplay()}</div>
     </div>
   );
 };
 
 export default SavedTrails;
+
+SavedTrails.propTypes = {
+  savedTrails: PropTypes.array,
+  selectedCity: PropTypes.string,
+  setSelectedTrail: PropTypes.func,
+};

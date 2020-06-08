@@ -1,6 +1,7 @@
-import React, { Component } from "react";
 import "./LocationContainer.css";
 import { fetchWeather, fetchTrails } from "../../apiCalls.js";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 import TrailCard from "../TrailCard/TrailCard";
 
 class LocationContainer extends Component {
@@ -102,7 +103,7 @@ class LocationContainer extends Component {
     };
     return (
       <div className="location-container">
-        <h2>{this.props.match}</h2>
+        <h2 className="city-name">{this.props.match}</h2>
         {checkLoading()}
       </div>
     );
@@ -110,3 +111,9 @@ class LocationContainer extends Component {
 }
 
 export default LocationContainer;
+
+LocationContainer.propTypes = {
+  match: PropTypes.string,
+  selectedCity: PropTypes.string,
+  setSelectedTrail: PropTypes.func,
+};

@@ -1,9 +1,9 @@
-import React from "react";
 import "./TrailDetails.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import React from "react";
 
 const TrailDetails = (props) => {
-
   const checkConditions = () => {
     if (
       props.selectedTrail.trailInfo.conditionStatus &&
@@ -28,7 +28,7 @@ const TrailDetails = (props) => {
 
   return (
     <div className="trail-container">
-      <h2>{props.selectedTrail.trailInfo.name}</h2>
+      <h2 className="trail-name">{props.selectedTrail.trailInfo.name}</h2>
       <p>{props.selectedTrail.trailInfo.summary}</p>
       <div className="trail-details-container">
         <div className="trail-detail-info-container">
@@ -76,3 +76,9 @@ const TrailDetails = (props) => {
 };
 
 export default TrailDetails;
+
+TrailDetails.propTypes = {
+  selectedTrail: PropTypes.object,
+  setSavedTrails: PropTypes.func,
+  savedTrails: PropTypes.array,
+};
