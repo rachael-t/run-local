@@ -13,7 +13,7 @@ describe("BadPath", () => {
     );
 
     const errorMessage = getByText(
-      "Hmm... doesn't look like there is a trail here. Time to turn around!"
+      "Hmm... it doesn't look like there is a trail here. Time to turn around!"
     );
     const returnButton = getByRole("button", { name: "Return Home" });
 
