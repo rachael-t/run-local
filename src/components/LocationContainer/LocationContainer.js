@@ -102,7 +102,7 @@ class LocationContainer extends Component {
     };
     return (
       <div className="location-container">
-        <h2>{this.props.match}</h2>
+        <h2 className='city-name'>{this.props.match}</h2>
         {checkLoading()}
       </div>
     );
