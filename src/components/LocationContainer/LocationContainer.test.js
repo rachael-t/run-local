@@ -124,10 +124,12 @@ describe("LocationContainer", () => {
       </MemoryRouter>
     );
 
+    const loadingMessage = getByText("Loading...");
     const weatherMessage = await waitFor(() =>
       getByText("The current temperature is 87.13°F")
     );
 
+    expect(loadingMessage).not.toBeInTheDocument();
     expect(weatherMessage).toBeInTheDocument();
   });
 
@@ -145,11 +147,10 @@ describe("LocationContainer", () => {
       </MemoryRouter>
     );
 
-    const trailName = await waitFor(() =>
-      getByText("Bear Peak Out and Back")
-    );
+    const loadingMessage = getByText("Loading...");
+    const trailName = await waitFor(() => getByText("Bear Peak Out and Back"));
 
+    expect(loadingMessage).not.toBeInTheDocument();
     expect(trailName).toBeInTheDocument();
   });
-
 });
