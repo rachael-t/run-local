@@ -6,6 +6,7 @@ import "@testing-library/jest-dom/";
 import { fetchWeather, fetchTrails } from "../../apiCalls";
 jest.mock("../../apiCalls.js");
 
+// Mocked data for fetchWeather & fetchTrails
 let cityWeather = {
   coord: {
     lon: -105.09,
@@ -90,6 +91,7 @@ let cityTrails = {
   ],
 };
 
+//Unit test for App
 describe("App", () => {
   it("should display the app and landing form when the page loads", () => {
     const { getByText, getByPlaceholderText, getByRole } = render(
@@ -109,6 +111,7 @@ describe("App", () => {
   });
 });
 
+//First user flow integration test
 describe("User flow of adding and removing a trail from favorites", () => {
   it("should load the selected city`s weather and trails when Find Trails has been clicked", async () => {
     fetchWeather.mockResolvedValueOnce(cityWeather);
@@ -365,7 +368,304 @@ describe("User flow of adding and removing a trail from favorites", () => {
   });
 });
 
-describe("User flow of switching the selected city", () => {
-  
+// Mocked data for second fetchWeather & fetchTrails calls
+let cityWeather2 = {
+  coord: {
+    lon: -105.09,
+    lat: 39.99,
+  },
+  weather: [
+    {
+      id: 800,
+      main: "Clear",
+      description: "clear sky",
+      icon: "01d",
+    },
+  ],
+  main: {
+    temp: 69.3,
+    feels_like: 62.24,
+    temp_min: 66,
+    temp_max: 73,
+    pressure: 1012,
+    humidity: 28,
+  },
+  name: "Lafayette",
+};
 
-})
+let cityTrails2 = {
+  trails: [
+    {
+      id: 7041440,
+      name: "Dirty Bismark",
+      summary:
+        "A rare, long, flat-ish loop on dirt in the Front Range, named after the Morgul Bismarck road cycling route.",
+      difficulty: "greenBlue",
+      location: "Superior, Colorado",
+      url: "https://www.trailrunproject.com/trail/7041440/dirty-bismark",
+      imgSmall:
+        "https://cdn2.apstatic.com/photos/hike/7037550_small_1555086265.jpg",
+      imgSmallMed:
+        "https://cdn2.apstatic.com/photos/hike/7037550_smallMed_1555086265.jpg",
+      imgMedium:
+        "https://cdn2.apstatic.com/photos/hike/7037550_medium_1555086265.jpg",
+      length: 15.7,
+      conditionStatus: "All Clear",
+      conditionDetails: "Dry",
+      conditionDate: "2020-05-17 12:11:44",
+    },
+    {
+      id: 7009680,
+      name: "Coyote Run - Harper Lake - Davidson Mesa - Louisville Res",
+      summary:
+        "Run an easy climb through Coyote Open Space to Harper Lake, with views of mountains at Davidson Mesa",
+      difficulty: "green",
+      location: "Louisville, Colorado",
+      url:
+        "https://www.trailrunproject.com/trail/7009680/coyote-run-harper-lake-davidson-mesa-louisville-res",
+      imgSmall:
+        "https://cdn2.apstatic.com/photos/hike/7046019_small_1555533780.jpg",
+      imgSmallMed:
+        "https://cdn2.apstatic.com/photos/hike/7046019_smallMed_1555533780.jpg",
+      imgMedium:
+        "https://cdn2.apstatic.com/photos/hike/7046019_medium_1555533780.jpg",
+      length: 8.3,
+      conditionStatus: "All Clear",
+      conditionDetails: "",
+      conditionDate: "2020-05-17 11:57:53",
+    },
+  ],
+};
+
+//Second user flow integration test
+describe("User flow of switching the selected city", () => {
+  it("should load the selected city`s weather and trails when Find Trails has been clicked", async () => {
+    fetchWeather.mockResolvedValueOnce(cityWeather);
+    fetchTrails.mockResolvedValueOnce(cityTrails);
+    const { getByText, getAllByText, getByPlaceholderText, getByRole } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    //App and Landing components rendered
+    const citySelection = getByPlaceholderText("select a city");
+    const enterButton = getByRole("button", { name: "Find Trails" });
+    fireEvent.change(citySelection, {
+      target: { value: "Arvada" },
+    });
+    fireEvent.click(enterButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+    const sidebarMessage = getByText("Select a different city:");
+    const cityName = await waitFor(() => getAllByText("Arvada"));
+    const weatherMessage = await waitFor(() =>
+      getByText("The current temperature is 87.13°F")
+    );
+    const trailName = await waitFor(() =>
+      getByText("Sunshine Lion's Lair Loop")
+    );
+
+    expect(sidebarMessage).toBeInTheDocument();
+    expect(cityName[1]).toBeInTheDocument();
+    expect(weatherMessage).toBeInTheDocument();
+    expect(trailName).toBeInTheDocument();
+  });
+
+  it("should load the new selected city`s weather and trails when Find New Trails has been clicked", async () => {
+    fetchWeather
+      .mockResolvedValueOnce(cityWeather)
+      .mockResolvedValueOnce(cityWeather2);
+    fetchTrails
+      .mockResolvedValueOnce(cityTrails)
+      .mockResolvedValueOnce(cityTrails2);
+
+    const { getByText, getAllByText, getByPlaceholderText, getByRole } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    //App and Landing components rendered
+    const citySelection = getByPlaceholderText("select a city");
+    const enterButton = getByRole("button", { name: "Find Trails" });
+    fireEvent.change(citySelection, {
+      target: { value: "Arvada" },
+    });
+    fireEvent.click(enterButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+    const cityName = await waitFor(() => getAllByText("Arvada"));
+    const weatherMessage = await waitFor(() =>
+      getByText("The current temperature is 87.13°F")
+    );
+    const trailName = await waitFor(() =>
+      getByText("Sunshine Lion's Lair Loop")
+    );
+    const sidebarCitySelection = getByPlaceholderText("select a city");
+    const newTrailsButton = getByRole("button", { name: "Find New Trails" });
+    fireEvent.change(sidebarCitySelection, {
+      target: { value: "Lafayette" },
+    });
+    fireEvent.click(newTrailsButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+
+    const newCityName = await waitFor(() => getAllByText("Lafayette"));
+    const weatherMessage2 = await waitFor(() =>
+      getByText("The current temperature is 69.3°F")
+    );
+    const trailName2 = await waitFor(() =>
+      getByText("Coyote Run - Harper Lake - Davidson Mesa - Louisville Res")
+    );
+
+    expect(newCityName[1]).toBeInTheDocument();
+    expect(weatherMessage2).toBeInTheDocument();
+    expect(trailName2).toBeInTheDocument();
+  });
+});
+
+//Third user flow integration test
+describe("User flow of adding trails from different cities to their saved trails", () => {
+  it("should display the a saved trail card when the My Saved Trails button is clicked", async () => {
+    fetchWeather.mockResolvedValueOnce(cityWeather);
+    fetchTrails.mockResolvedValueOnce(cityTrails);
+    const {
+      getByText,
+      getAllByText,
+      getByPlaceholderText,
+      getByRole,
+      getAllByRole,
+    } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    //App and Landing components rendered
+    const citySelection = getByPlaceholderText("select a city");
+    const enterButton = getByRole("button", { name: "Find Trails" });
+    fireEvent.change(citySelection, {
+      target: { value: "Arvada" },
+    });
+    fireEvent.click(enterButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+    const cityName = await waitFor(() => getAllByText("Arvada"));
+    const weatherMessage = await waitFor(() =>
+      getByText("The current temperature is 87.13°F")
+    );
+    const trailName = await waitFor(() => getByText("Bear Peak Out and Back"));
+    const trailDetailsButton = getAllByRole("button", {
+      name: "View Trail Details",
+    });
+    fireEvent.click(trailDetailsButton[1]);
+
+    //Sidebar and TrailDetails component rendered
+    const saveButton = getByRole("button", {
+      name: "Save to Favorites",
+    });
+    fireEvent.click(saveButton);
+    const savedTrailsButton = getByRole("button", { name: "My Saved Trails" });
+    fireEvent.click(savedTrailsButton);
+
+    //Sidebar and SavedTrails component rendered
+    const sidebarMessage = getByText("Select a different city:");
+    const savedTrailName = getByText("Bear Peak Out and Back");
+    const savedTrailDetailsButton = getByRole("button", {
+      name: "View Trail Details",
+    });
+
+    expect(sidebarMessage).toBeInTheDocument();
+    expect(savedTrailName).toBeInTheDocument();
+    expect(savedTrailDetailsButton).toBeInTheDocument();
+  });
+
+  it("should display multiple saved trail cards from different cities when the My Saved Trails button is clicked", async () => {
+    fetchWeather
+      .mockResolvedValueOnce(cityWeather)
+      .mockResolvedValueOnce(cityWeather2);
+    fetchTrails
+      .mockResolvedValueOnce(cityTrails)
+      .mockResolvedValueOnce(cityTrails2);
+    const {
+      getByText,
+      getAllByText,
+      getByPlaceholderText,
+      getByRole,
+      getAllByRole,
+    } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    //App and Landing components rendered
+    const citySelection = getByPlaceholderText("select a city");
+    const enterButton = getByRole("button", { name: "Find Trails" });
+    fireEvent.change(citySelection, {
+      target: { value: "Arvada" },
+    });
+    fireEvent.click(enterButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+    const cityName = await waitFor(() => getAllByText("Arvada"));
+    const weatherMessage = await waitFor(() =>
+      getByText("The current temperature is 87.13°F")
+    );
+    const trailName = await waitFor(() => getByText("Bear Peak Out and Back"));
+    const trailDetailsButton = getAllByRole("button", {
+      name: "View Trail Details",
+    });
+    fireEvent.click(trailDetailsButton[1]);
+
+    //Sidebar and TrailDetails component rendered
+    const saveButton = getByRole("button", {
+      name: "Save to Favorites",
+    });
+    fireEvent.click(saveButton);
+    const savedTrailsButton = getByRole("button", { name: "My Saved Trails" });
+    fireEvent.click(savedTrailsButton);
+
+    //Sidebar and SavedTrails component rendered
+    const savedTrailName = getByText("Bear Peak Out and Back");
+    const savedTrailDetailsButton = getByRole("button", {
+      name: "View Trail Details",
+    });
+    const sidebarCitySelection = getByPlaceholderText("select a city");
+    const newTrailsButton = getByRole("button", { name: "Find New Trails" });
+    fireEvent.change(sidebarCitySelection, {
+      target: { value: "Lafayette" },
+    });
+    fireEvent.click(newTrailsButton);
+
+    //Sidebar, LocationContainer and TrailCard components rendered
+    const newCityName = await waitFor(() => getAllByText("Lafayette"));
+    const weatherMessage2 = await waitFor(() =>
+      getByText("The current temperature is 69.3°F")
+    );
+    const trailName2 = await waitFor(() =>
+      getByText("Coyote Run - Harper Lake - Davidson Mesa - Louisville Res")
+    );
+    const newTrailDetailsButton = getAllByRole("button", {
+      name: "View Trail Details",
+    });
+    fireEvent.click(newTrailDetailsButton[1]);
+    //Sidebar and TrailDetails component rendered
+    const newSaveButton = getByRole("button", {
+      name: "Save to Favorites",
+    });
+    fireEvent.click(newSaveButton);
+    const newSavedTrailsButton = getByRole("button", {
+      name: "My Saved Trails",
+    });
+    fireEvent.click(newSavedTrailsButton);
+
+    //Sidebar and SavedTrails component rendered
+    const savedTrailsViewDetailsButton = getAllByRole("button", {
+      name: "View Trail Details",
+    });
+
+    expect(savedTrailsViewDetailsButton).toHaveLength(2);
+  });
+});
