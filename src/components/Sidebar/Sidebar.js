@@ -1,7 +1,8 @@
-import React, { Component } from "react";
 import "./Sidebar.css";
-import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
 
 class Sidebar extends Component {
   constructor(props) {
@@ -81,3 +82,7 @@ class Sidebar extends Component {
 }
 
 export default withRouter(Sidebar);
+
+Sidebar.propTypes = {
+  setSelectedCity: PropTypes.func,
+};
