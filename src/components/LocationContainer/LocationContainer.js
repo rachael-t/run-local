@@ -38,7 +38,7 @@ class LocationContainer extends Component {
     return [lat, lon];
   };
 
-  componentDidMount() {
+  getCityData = () => {
     const [lat, lon] = this.getCityLatLon(this.props.match);
     fetchWeather(lat, lon)
       .then((data) => data)
@@ -54,25 +54,15 @@ class LocationContainer extends Component {
     fetchTrails(lat, lon)
       .then((data) => data)
       .then((trails) => this.setState({ cityTrails: trails.trails }));
+  };
+
+  componentDidMount() {
+    this.getCityData();
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match !== prevProps.match) {
-      const [lat, lon] = this.getCityLatLon(this.props.match);
-      fetchWeather(lat, lon)
-        .then((data) => data)
-        .then((weather) =>
-          this.setState({
-            cityWeather: {
-              temp: weather.main.temp,
-              type: weather.weather[0].main,
-              description: weather.weather[0].description,
-            },
-          })
-        );
-      fetchTrails(lat, lon)
-        .then((data) => data)
-        .then((trails) => this.setState({ cityTrails: trails.trails }));
+      this.getCityData();
     }
   }
 

@@ -1,8 +1,8 @@
-import React from "react";
-import TrailDetails from "./TrailDetails";
+import "@testing-library/jest-dom/";
 import { MemoryRouter } from "react-router-dom";
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/";
+import React from "react";
+import TrailDetails from "./TrailDetails";
 
 const mockSetSavedTrails = jest.fn();
 

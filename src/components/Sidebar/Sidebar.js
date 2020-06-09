@@ -37,7 +37,7 @@ class Sidebar extends Component {
         <Link to="/SavedTrails" className="saved-trails-link">
           <button className="saved-trails-button">My Saved Trails</button>
         </Link>
-        <form className="sidebar-form">
+        <form className="sidebar-form" aria-label="select a city form">
           <img
             src="https://img.icons8.com/ios/50/000000/trail--v2.png"
             alt="trail icon"
@@ -47,8 +47,10 @@ class Sidebar extends Component {
             className="city-selection"
             placeholder="select a city"
             onChange={this.handleSelection}
+            defaultValue={"select a city"}
+            aria-label="select a city dropdown"
           >
-            <option disabled selected value="select a city">
+            <option disabled value="select a city">
               Select a City
             </option>
             <option value="Arvada">Arvada</option>

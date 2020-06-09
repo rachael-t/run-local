@@ -1,8 +1,8 @@
-import React from "react";
-import Landing from "./Landing";
+import "@testing-library/jest-dom/";
 import { MemoryRouter } from "react-router-dom";
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/";
+import Landing from "./Landing";
+import React from "react";
 
 describe("Landing", () => {
   it("should display the form when rendered", () => {

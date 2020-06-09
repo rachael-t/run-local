@@ -1,9 +1,9 @@
-import React from "react";
-import App from "./App";
-import { MemoryRouter } from "react-router-dom";
-import { render, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/";
 import { fetchWeather, fetchTrails } from "../../apiCalls";
+import { MemoryRouter } from "react-router-dom";
+import { render, fireEvent, waitFor } from "@testing-library/react";
+import App from "./App";
+import React from "react";
 jest.mock("../../apiCalls.js");
 
 // Mocked data for fetchWeather & fetchTrails

@@ -1,8 +1,8 @@
-import React from "react";
-import SavedTrails from "./SavedTrails";
+import "@testing-library/jest-dom/";
 import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
-import "@testing-library/jest-dom/";
+import React from "react";
+import SavedTrails from "./SavedTrails";
 
 const mockSavedTrails = [
   {
