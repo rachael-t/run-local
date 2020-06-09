@@ -11,7 +11,7 @@ Currently, the cities featured in Run Local are: Arvada, Broomfield, Lafayette, 
 
 ## Deployed Website
 
-* Run Local
+* [Run Local](https://wizardly-kirch-5f730b.netlify.app/)
 
 
 ## Technologies Used
@@ -70,7 +70,7 @@ Please see this [Gist](https://gist.github.com/rachael-t/686a4291f85fb5fb713bff0
 
 ## Learning Goals
 
-* Use the technology I've learned over the course of the quarter to demonstrate mastery in React, Router, and asynchronous JavaScript.
+* Use the technologies I've learned over the course of the quarter to demonstrate mastery in React, Router, and asynchronous JavaScript.
 
 * Work within constraints to deliver a unique product for my audience which helps them in some way. 
 
@@ -92,4 +92,6 @@ Please see this [Gist](https://gist.github.com/rachael-t/686a4291f85fb5fb713bff0
 
 * [Rachael Thomas](https://github.com/rachael-t)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+_This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
