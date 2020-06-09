@@ -38,8 +38,9 @@ class Landing extends Component {
             className="city-selection"
             placeholder="select a city"
             onChange={this.handleSelection}
+            defaultValue={"select a city"}
           >
-            <option disabled selected value="select a city">
+            <option disabled value="select a city">
               Select a City
             </option>
             <option value="Arvada">Arvada</option>
