@@ -1,24 +1,24 @@
 .saved-trails-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: column;
-    width: 80%;
-  }
-  
-  .saved-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    height: 90vh;
-    overflow: scroll;
-  }
-  
-  .saved-trails-container h2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-  }
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 80%;
+}
 
-  .saved-trails-title {
-    font-family: 'Rock Salt', cursive;
-  }
+.saved-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+  justify-content: space-around;
+  overflow: scroll;
+}
+
+.saved-trails-container h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.saved-trails-title {
+  font-family: "Rock Salt", cursive;
+}

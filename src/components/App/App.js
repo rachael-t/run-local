@@ -1,12 +1,12 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+import BadPath from "../BadPath/BadPath";
 import Landing from "../Landing/Landing";
 import LocationContainer from "../LocationContainer/LocationContainer";
 import React, { Component } from "react";
 import SavedTrails from "../SavedTrails/SavedTrails";
 import Sidebar from "../Sidebar/Sidebar";
 import TrailDetails from "../TrailDetails/TrailDetails";
-import BadPath from "../BadPath/BadPath";
 
 class App extends Component {
   constructor() {

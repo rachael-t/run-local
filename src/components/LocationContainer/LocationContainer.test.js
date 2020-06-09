@@ -1,9 +1,9 @@
-import React from "react";
-import LocationContainer from "./LocationContainer";
-import { MemoryRouter } from "react-router-dom";
-import { render, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/";
 import { fetchWeather, fetchTrails } from "../../apiCalls";
+import { MemoryRouter } from "react-router-dom";
+import { render, waitFor } from "@testing-library/react";
+import LocationContainer from "./LocationContainer";
+import React from "react";
 jest.mock("../../apiCalls.js");
 
 let cityWeather = {

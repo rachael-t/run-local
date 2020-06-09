@@ -1,36 +1,35 @@
 .trail-card {
-    align-items: center;
-    background-color: #6D7F9C;
-    border: 2px solid #35475D;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    height: 375px;
-    justify-content: space-between;
-    margin: 3%;
-    padding: 1%;
-    width: 300px;
-  }
-  
-  .view-trail-details {
-    background-color: #535B2D;
-    border-radius: 5px;
-    color: #F4F5F8;
-    font-size: medium;
-    font-weight: 700;
-    margin-bottom: 30px;
-    padding: 2px 0 5px;
-    text-align: center;
-    width: 150px;
-  }
-  
-  .trail-card h2 {
-    margin-bottom: 8px;
-    color: #F4F5F8;
-  }
+  align-items: center;
+  background-color: #6d7f9c;
+  border-radius: 5px;
+  border: 2px solid #35475d;
+  display: flex;
+  flex-direction: column;
+  height: 375px;
+  justify-content: space-between;
+  margin: 3%;
+  padding: 1%;
+  width: 300px;
+}
 
-  .trail-card-image {
-      width: 200px;
-      height: 150px;
-  }
-  
+.view-trail-details {
+  background-color: #535b2d;
+  border-radius: 5px;
+  color: #f4f5f8;
+  font-size: medium;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding: 2px 0 5px;
+  text-align: center;
+  width: 150px;
+}
+
+.trail-card h2 {
+  color: #f4f5f8;
+  margin-bottom: 8px;
+}
+
+.trail-card-image {
+  height: 150px;
+  width: 200px;
+}

@@ -1,44 +1,44 @@
 .sidebar-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #F4F5F8;
-    border-right: 2px solid #535b2d;
-    height: 120vh;
-    width: 20%;
-  }
-  
-  h4,
-  p, li {
-    margin-bottom: 30px;
-    text-align: center;
-  }
+  align-items: center;
+  background-color: #f4f5f8;
+  border-right: 2px solid #535b2d;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+  width: 20%;
+}
 
-  li {
-      list-style-type: none;
-  }
+h4,
+p,
+li {
+  margin-bottom: 30px;
+  text-align: center;
+}
 
-  .sidebar-message {
-      margin-top: 10px;
-      font-weight: bold;
-  }
-  
- .new-trails-button, .saved-trails-button {
-    border-radius: 5px;
-    font-size: medium;
-    font-weight: 700;
-    color: black;
-    margin-bottom: 30px;
-    padding: 2px 0 5px;
-    text-align: center;
-    width: 200px;
-    background-color: #41442e;
-    border: 2px solid #535b2d;
-    color: #F4F5F8;
-  }
+li {
+  list-style-type: none;
+}
 
-  img {
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-  
+.sidebar-message {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.new-trails-button,
+.saved-trails-button {
+  background-color: #41442e;
+  border-radius: 5px;
+  border: 2px solid #535b2d;
+  color: #f4f5f8;
+  font-size: medium;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding: 2px 0 5px;
+  text-align: center;
+  width: 200px;
+}
+
+img {
+  margin-bottom: 5%;
+  margin-top: 5%;
+}

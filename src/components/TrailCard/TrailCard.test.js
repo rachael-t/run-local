@@ -1,8 +1,8 @@
-import React from "react";
-import TrailCard from "./TrailCard";
+import "@testing-library/jest-dom/";
 import { MemoryRouter } from "react-router-dom";
 import { render, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/";
+import React from "react";
+import TrailCard from "./TrailCard";
 
 const mockSetSelectedTrail = jest.fn();
 
