@@ -29,7 +29,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
-        <form className="landing-form">
+        <form className="landing-form" aria-label="select a city form">
           <h2>Welcome!</h2>
           <p className="welcome-message">
             Please select a city you would like to run in:
@@ -39,6 +39,7 @@ class Landing extends Component {
             placeholder="select a city"
             onChange={this.handleSelection}
             defaultValue={"select a city"}
+            aria-label="select a city dropdown"
           >
             <option disabled value="select a city">
               Select a City
