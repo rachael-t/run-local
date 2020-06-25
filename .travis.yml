@@ -5,7 +5,7 @@ notifications:
   email: false
 deploy:
   provider: heroku
-  app: cool-app-name
+  app: run-local
   skip_cleanup: true
   api_key:
     secure: IOb9hSqpmeMYFgiQJMy2G6vokAH9gG7kMZAD5tcanG7aRJgwkak3cPun0hjYe2H2t0By1V5wJmTFqRNS2SeA48shw5oZhGR4B0WQrg2xc4iQ/5+Bb1gCdBhkXP9y1cKwzTO63SYjmOzgukGKRYQ/2WNNQeexnf7wjyHh2oJmatImXcv1AeAk7hPskendHFX2jZXWgnKG9Riy9UtttpEdQGgLsGH0/Zuu5Oh5fr55KEUAwtw6KqO9gGBh9owqn08CHOdKC9+aRbsbT7FspFZY+bR3/84p7rklVHHR5F+bQ0BHNQWhk+wAZWjKYzGp0fib+hhGLgDZ2EfreIteMrriA0VhETxBW/KE34R/ZdT9MaIw53/ZZFj04TBDLqgvwnDu2zMKCCHVApsawbRr2268I8nWsGUkmIyKcR4qMKSVlCFpn1ulgEUMyAjDtpkomrkuqpW6w4KVrEA6RMlXpQ6YwyPZuWncQ72wpKF0A504JGBK9SFBfygdw1Xx7FWSYX/y5Vyw+jCZfSHf/bXo7hAn+1Us5Qw5Xelexr18/6ot2NE+pyxCprNkNzR42/akBwZXxMYM2VonIhg9CEfduQxhFjxKHtW/ZAGClNxPlYPMXrOvsTBvIdU2EkJPVqTe7dAnpcne9WsN1A7VpfvbMc8TsgcVAhaZHwHthNVWLKd91FU=
