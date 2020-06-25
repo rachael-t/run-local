@@ -70,7 +70,7 @@ class Sidebar extends Component {
           alt="shopping bag with heart icon"
         />
         <div>
-          <h4>Shop your local running store:</h4>
+          <h4>Local Running Stores:</h4>
           <ul>
             <li>Runners Roost</li>
             <li>Berkeley Park Running Company</li>
