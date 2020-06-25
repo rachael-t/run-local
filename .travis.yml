@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  app: cool-app-name
+  skip_cleanup: true
+  api_key:
+    secure: k6RPVh9ednDEc8g9bXs8lgdb55J4On2LdlvAqGYdmVdD8m60RiOAe2AxmW1qu2V+HHiMhgtUPpuhZ/4wCIFfjgQ7rpJpTrqRaGi8nPggKjMeeH3bPG9waOXazme1egKOVqaUx8GUAQPN6HaAGCOqeNDp/eKaGNbW5OzcVEtMvkiiNmwHErg5EyUtA/2mvgSDdwcbQlF3Y3dnObrckqon5XDHSi9PV7SSyZp7eoCxB58fJyN2PoDrA3hMearkAuAT+UTM/aqBpf+Wgx/CcvZ22+kMSyafHv1/36L0qOW3ttVBB/2/Jt+iZGJcGw+3DXpSJE6GHfR1NU21QLXm8ntUEe0sz5CgyvWt/VXPXEiIAQ4RJmiBFGCwuudEvPzWhjY5LUCr9PUoDw4t4fTgAJe4QtZz5FX3Bz5EuGuWhxkiB9F3+mO3+5trXCJt2Lr5NiC0SgkYIxFKDyP40kZi4sZwI33kqMGa8etJr3EwSww3t7uwrd31NPz3QbB34IPPACPw3cxFx7UI+aRj1DWc15W7umfAJhgc2MZJ4pF+7mHU1yRqAnePDNDVLNw7MNNdAx+ccQ1O8hkBBQiaGMcLW3usCnkYb9QKZfvU5chzCp/cp5gfWjxLuHMFBVANrtewRT5kDmsozqt1AsqJhKEBNZfvHXh7NN6oQf5zzxBbPL/+UtE=
