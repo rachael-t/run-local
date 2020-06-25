@@ -10,7 +10,7 @@ export const fetchWeather = async (lat, lon) => {
 
 export const fetchTrails = async (lat, lon) => {
   try {
-    const response = await fetch(`https://www.trailrunproject.com/data/get-trails?lat=${lat}&lon=${lon}&maxDistance=5&key=200784597-944ac7b994117cd50260ab05aae14a92`);
+    const response = await fetch(`https://www.trailrunproject.com/data/get-trails?lat=${lat}&lon=${lon}&maxDistance=5&key=${process.env.REACT_APP_TRAILPROJECT_API_KEY}`);
     return await response.json();
   }
   catch (err) {
