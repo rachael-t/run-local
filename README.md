@@ -11,7 +11,7 @@ Currently, the cities featured in Run Local are: Arvada, Broomfield, Lafayette, 
 
 ## Deployed Website
 
-* [Run Local](https://wizardly-kirch-5f730b.netlify.app/)
+* [Run Local](https://run-local.netlify.app/)
 
 
 ## Technologies Used
