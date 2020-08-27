@@ -8,6 +8,8 @@ Run Local is a website for runners located in northwest Denver suburbs who are i
 
 Currently, the cities featured in Run Local are: Arvada, Broomfield, Lafayette, Louisville, Superior, and Westminster.
 
+The application can be found [here](https://run-local.netlify.app/).
+
 
 ## Technologies Used
 
